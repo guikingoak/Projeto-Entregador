@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Atualizar Entregador</title>
+</head>
+<body>
+<h1>Atualizar Entregador</h1>
+<form action="#" th:action="@{/entregadores/{id}(id=${entregador.id})}" th:object="${entregador}" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" th:field="*{nome}">
+    <label for="telefone">Telefone:</label>
+    <input type="text" id="telefone" th:field="*{telefone}">
+    <button type="submit">Atualizar</button>
+</form>
+</body>
+</html>

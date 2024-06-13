@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Entregadores</title>
+</head>
+<body>
+<h1>Lista de Entregadores</h1>
+<ul>
+    <li th:each="entregador : ${entregadores}">
+        <span th:text="${entregador.nome}"></span> -
+        <span th:text="${entregador.telefone}"></span>
+        <a th:href="@{/entregadores/{id}(id=${entregador.id})}">Detalhes</a>
+        <a th:href="@{/entregadores/{id}/edit(id=${entregador.id})}">Editar</a>
+        <form th:action="@{/entregadores/{id}(id=${entregador.id})}" method="post" style="display:inline;">
+            <input type="hidden" name="_method" value="delete"/>
+            <button type="submit">Deletar</button>
+        </form>
+    </li>
+</ul>
+<a href="/entregadores/new">Criar novo entregador</a>
+</body>
+</html>

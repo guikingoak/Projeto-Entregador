@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Criar Novo Entregador</title>
+</head>
+<body>
+<h1>Criar Novo Entregador</h1>
+<form action="#" th:action="@{/entregadores}" th:object="${entregador}" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" th:field="*{nome}">
+    <label for="telefone">Telefone:</label>
+    <input type="text" id="telefone" th:field="*{telefone}">
+    <button type="submit">Criar</button>
+</form>
+</body>
+</html>
